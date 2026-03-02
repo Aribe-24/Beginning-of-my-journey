@@ -1,0 +1,65 @@
+.top{
+    margin-top: 0;
+    background: antiquewhite;
+    width: 100%;
+}
+
+/*===== Individual project card====*/
+.project-card{
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    text-align: center;
+}
+/*==== Project Images ==== */
+.project-card img{
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.header{
+    background: antiquewhite;
+    width: 100%;
+    
+}
+.cta-container{
+    
+    text-align: center;
+    margin-top: 20px;
+
+}
+.cta{
+    display: grid;
+    font-weight: bold;
+    background: antiquewhite;
+    align-items: center;
+    color: black;
+}
+.don{
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+footer{
+    background: antiquewhite;
+    color: solid brown;
+    text-align: center;
+    padding: 15px;
+    margin-top: 15px;
+    padding: 20px;
+}
+.gallery{
+    display: flex;
+    margin: auto;
+    grid-template-columns: repeat(autofit,minmax(220px,1fr));
+    width: 100%;
+    gap: 10px;
+}
+
+.gallery img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

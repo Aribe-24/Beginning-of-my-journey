@@ -1,0 +1,104 @@
+ body {
+  background-color: azure;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+header {
+  background-color: bisque;
+  color: solid brown;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.layout {
+  display: grid;
+}
+nav ul {
+  display: flex;
+  padding: 0;
+  margin-left: 35px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: bold;
+}
+
+.navbar {
+  justify-content:center;
+  background: antiquewhite;
+  text-align: center;
+  padding: 20px;
+}
+.nav-button {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.nav-button a {
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.services{
+  color: solid rgb(30, 9, 9);
+  margin-bottom: 10px;
+  align-self: start;
+  justify-content: center;
+  width: 100%;
+  
+}
+.services{
+  background-image: url(../Image/girl.jpg);
+}
+.services h2{
+  text-align: center;
+  color: white;
+}
+.service-box{
+  background: antiquewhite;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  align-items: center;
+}
+.service-container{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 45px;
+  background-color: beige;
+  font-size: 20px;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 15px 40px;
+}
