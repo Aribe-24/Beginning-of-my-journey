@@ -3,135 +3,477 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Careers | Be Her</title>
-    <link rel="stylesheet" href="../atim.css/careers.css" />
+    <title>Careers | BE HER</title>
+    <style>
+        /* ===== MODERN DESIGN SYSTEM (MATCHING HOME PAGE) ===== */
+        :root {
+            --primary: #5A2A75;        /* Deep, professional purple */
+            --primary-light: #F4EFF7;  /* Soft lavender backdrop */
+            --accent: #D4AF37;         /* Elegant gold */
+            --text-dark: #2D2D2D;      /* Soft charcoal for readability */
+            --text-muted: #555555;     /* Medium gray for secondary text */
+            --bg-light: #FAFAFA;       /* Very clean, off-white background */
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== GLOBAL RESETS ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== SUB-BANNER ===== */
+        .sub-banner {
+            background-color: var(--primary-light);
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .sub-banner h2 {
+            margin: 0;
+            font-size: 28px;
+            color: var(--primary);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* ===== SECTION STYLING ===== */
+        section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 26px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* ===== CORE VALUES LIST ===== */
+        .values-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .values-list li {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* ===== OPEN POSITIONS STYLING ===== */
+        .jobs {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .jobs li {
+            background: var(--bg-light);
+            border: 1px solid #EAEAEA;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .jobs li:hover {
+            border-color: var(--primary);
+            background-color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(90, 42, 117, 0.08);
+        }
+
+        /* ===== APPLICATION FORM ===== */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Make some elements take full grid width */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #DDD;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            outline: none;
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(90, 42, 117, 0.1);
+        }
+
+        /* Document Upload Field Design */
+        input[type="file"] {
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            background: var(--accent);
+            color: var(--white);
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        button[type="submit"]:hover {
+            background: #bfa032;
+            transform: translateY(-1px);
+        }
+
+        /* ===== CONTACT & FOOTER ===== */
+        .contact {
+            background-color: var(--white);
+            border-top: 4px solid var(--primary);
+            text-align: center;
+        }
+
+        .contact h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== RESPONSIVE FIXES ===== */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
   </head>
   <body>
-    <!--Navigation-->
-      <nav class="root">
-        <a href="home.html">Home</a>
-        <a href="careers.html">careers</a>
-        <a href="profile.html">projects</a>
-      </nav>
-    </header>
 
-    <main class="beher">
-      <!--Intro-->
+    <!-- Unified Matching Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="brand">
+                <h1>BE HER</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="profile.html">Projects</a></li>
+            </ul>
+        </div>
+    </header> 
+
+    <nav class="sub-banner">
+        <h2>Grow Your Career with Us</h2>
+    </nav>
+
+    <main class="main-container">
+      
+      <!-- Company Overview Section -->
       <section>
-        <p>
-          Welcome to the careers page of BE HER.We are a youth empowering
-          initiative dedicated to developing confident,skilled and purpose
-          driven women through mentorship,leadership training and community
-          impact programs
+        <p class="intro-text">
+          Welcome to the careers page of BE HER. We are a youth empowering
+          initiative dedicated to developing confident, skilled, and purpose-driven 
+          women through mentorship, leadership training, and community impact programs.
         </p>
-        <!--Mission & Vision-->
+        
         <h2>Mission</h2>
         <p>
           To empower young women through leadership development, mentorship, and
           opportunities for growth.
         </p>
+        
         <h2>Vision</h2>
         <p>
           A society where every young woman has the confidence and skills to
           lead change.
         </p>
-        <!--Values-->
+        
         <h2>Our Core Values</h2>
-        <ul>
+        <ul class="values-list">
           <li>Leadership</li>
-          <li>Intergrity</li>
+          <li>Integrity</li>
           <li>Growth</li>
           <li>Empowerment</li>
         </ul>
-        <!--Join Message-->
-        <h2>Join Be Her</h2>
+      </section>
+
+      <!-- Culture Pitch and Open Roles Section -->
+      <section>
+        <h2>Join BE HER</h2>
         <p>
-          Join a movement that empowers young women to lead,learn and thrive
+          Join a movement that empowers young women to lead, learn, and thrive.
         </p>
-        <h3>Why work with BE HER</h3>
+        
+        <h3>Why work with BE HER?</h3>
         <p>
-          At Be Her, we empower women to own their confidence,command spaces,and
-          become the unapologetic best versions of themselves.Through
-          reources,community,and opportunities,we help women unlock their
-          potential and lead boldly
+          At BE HER, we empower women to own their confidence, command spaces, and
+          become the unapologetic best versions of themselves. Through
+          resources, community, and opportunities, we help women unlock their
+          potential and lead boldly.
         </p>
-        <!--Open Positions-->
+        
         <h2>Open Positions</h2>
         <ul class="jobs">
           <li>Leadership Coach</li>
           <li>Content Creator</li>
           <li>Community Manager</li>
           <li>Digital Marketer</li>
-          <li>Community Consultant</li>
+          <li>Communications Consultant</li>
         </ul>
+      </section>
+
+      <!-- Application Form Panel Section -->
+      <section>
         <h2>Apply Now</h2>
-        <div class="panel">
-          <form>
-            <div class="form-container">
+        <p>Fill out the profile below to submit your application directly to our team.</p>
+        
+        <form>
+          <div class="form-grid">
+            <div class="form-group">
               <label>First Name</label>
-              <input type="text" placeholder="firstname" required />
+              <input type="text" placeholder="e.g., Joan" required />
             </div>
-            <div>
+            
+            <div class="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="lastname" required />
+              <input type="text" placeholder="e.g., Atimango" required />
             </div>
-            <div>
+            
+            <div class="form-group">
               <label>Years of Experience</label>
-              <input type="number" placeholder="Years of Experience" required />
+              <input type="number" min="0" placeholder="Years of Experience" required />
             </div>
-            <div>
+            
+            <div class="form-group">
               <label>Position Applying For</label>
               <select name="position">
                 <option>Leadership Coach</option>
-                <option>Content Creater</option>
-                <option>Leadership Coach</option>
-                <option>Community Marketer</option>
-                <option>Communicatons Consultant</option>
+                <option>Content Creator</option>
+                <option>Community Manager</option>
+                <option>Digital Marketer</option>
+                <option>Communications Consultant</option>
               </select>
             </div>
-            <div>
-              <label>Email:</label>
-              <input type="email" placeholder="Email" required />
+            
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="name@example.com" required />
             </div>
-            <div>
-              <label>Phone Number:</label>
-              <input type="tel" placeholder="phone" required />
+            
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+256..." required />
             </div>
-            <div>
+            
+            <div class="form-group full-width">
               <label>Address</label>
-              <input type="text" placeholder="address" required />
+              <input type="text" placeholder="Street, City, Region" required />
             </div>
-            <div>
-              <label>Expected Pay:</label>
-              <input type="text" placeholder="Expected pay" required />
+            
+            <div class="form-group full-width">
+              <label>Expected Pay</label>
+              <input type="text" placeholder="Specify currency and frequency (e.g. UGX / Month)" required />
             </div>
-            <div>
-              <label>Upload CV</label>
+            
+            <div class="form-group">
+              <label>Upload CV (PDF format)</label>
               <input type="file" required />
             </div>
-            <div>
-              <label>Upload Photo</label>
-              <input type="file" required />`
+            
+            <div class="form-group">
+              <label>Upload Professional Photo</label>
+              <input type="file" required />
             </div>
-            <div>
-            <button type="Submit">Submit Application</button>
+            
+            <div class="form-group full-width">
+              <button type="submit">Submit Application</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </section>
-      </main>
+
+      <!-- Footer Contact Section -->
       <section id="contact" class="contact">
         <h2>Contact BE HER</h2>
-        <p>Email:
-          <a href="mailto:atimangojoan85@gmail.com">
-        atimangojoan85@gmail.com</a>
-        </p>
-        <p>Phone:
-        <a href="tel:+256746505708"> +256 746505708</a>
-        </p>
-        <p>Location:Upper Churchill,opposite Kabu shell,Mukono</p>
-      <footer>
-      &copy; 2026 BE HER.All Rights Reseved.
-      </footer>
+        <p>Email: <a href="mailto:atimangojoan85@gmail.com">atimangojoan85@gmail.com</a></p>
+        <p>Phone: <a href="tel:+256746505708">+256 746505708</a></p>
+        <p>Location: Upper Churchill, opposite Kabu Shell, Mukono</p>
+      </section>
+
+    </main>
+
+    <footer>
+      &copy; 2026 BE HER. All Rights Reserved.
+    </footer>
   </body>
 </html>
